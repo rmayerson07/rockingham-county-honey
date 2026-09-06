@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rockingham County Honey Co — Raw honey from Stratham, NH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Yellowtail&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f4ebd6;
+    --paper-deep:#ecdfbf;
+    --ink:#2a2014;
+    --ink-soft:#5d4d37;
+    --honey:#bd8a2c;
+    --honey-deep:#9a6e1d;
+    --gold:#d2b67c;
+    --line:#cdb78a;
+    --footer:#241a10;
+    --maxw:1240px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Spectral",Georgia,serif;
+    font-weight:400;
+    font-size:19px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    background-image:
+      radial-gradient(circle at 50% 0%, rgba(210,182,124,.16), transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100' viewBox='0 0 56 100'%3E%3Cg fill='none' stroke='%23bd8a2c' stroke-opacity='0.05' stroke-width='1.4'%3E%3Cpath d='M28 -16.5 L0 0 V33 L28 49.5 L56 33 V0 Z'/%3E%3Cpath d='M28 50.5 L0 67 V100 L28 116.5 L56 100 V67 Z'/%3E%3Cpath d='M0 67 L0 100 M56 67 L56 100'/%3E%3C/g%3E%3C/svg%3E");
+  }
+  h1,h2,h3{font-family:"Cormorant Garamond",serif;font-weight:600;line-height:1.04;margin:0;letter-spacing:.3px;}
+  p{margin:0 0 1em;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px;}
+  .script{font-family:"Yellowtail",cursive;font-weight:400;}
+  .over{
+    font-family:"Spectral",serif;
+    text-transform:uppercase;
+    letter-spacing:.32em;
+    font-size:13px;
+    font-weight:600;
+    color:var(--honey-deep);
+  }
+
+  /* buttons */
+  .btn{
+    display:inline-flex;align-items:center;gap:.5em;
+    font-family:"Spectral",serif;font-weight:600;
+    text-transform:uppercase;letter-spacing:.14em;font-size:13px;
+    padding:15px 28px;border-radius:2px;cursor:pointer;border:1.5px solid var(--ink);
+    background:var(--ink);color:var(--paper);transition:.18s ease;
+  }
+  .btn:hover{background:transparent;color:var(--ink);}
+  .btn--ghost{background:transparent;color:var(--ink);}
+  .btn--ghost:hover{background:var(--ink);color:var(--paper);}
+  .btn--honey{background:var(--honey);border-color:var(--honey-deep);color:#fff;}
+  .btn--honey:hover{background:var(--honey-deep);color:#fff;}
+
+  /* ---------- nav ---------- */
+  header.nav{position:sticky;top:0;z-index:50;
+    background:rgba(244,235,214,.86);backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:84px;}
+  .brand{display:flex;align-items:center;gap:14px;}
+  .brand img{width:46px;height:46px;object-fit:contain;}
+  .brand .bn{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:21px;line-height:1;letter-spacing:.4px;}
+  .brand .bn small{display:block;font-family:"Spectral",serif;font-weight:500;
+    text-transform:uppercase;letter-spacing:.3em;font-size:9.5px;color:var(--honey-deep);margin-top:5px;}
+  nav.links{display:flex;align-items:center;gap:38px;}
+  nav.links a{font-family:"Spectral",serif;font-weight:500;text-transform:uppercase;
+    letter-spacing:.16em;font-size:12.5px;color:var(--ink-soft);transition:color .15s;}
+  nav.links a:hover{color:var(--ink);}
+  .nav-cta{padding:11px 22px;}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;
+    padding:88px 40px 96px;}
+  .hero h1{font-size:clamp(52px,6.6vw,92px);letter-spacing:-.5px;}
+  .hero h1 .script{display:block;color:var(--honey-deep);font-size:.92em;line-height:.9;margin:.04em 0 -.06em;}
+  .hero p.lede{font-size:21px;color:var(--ink-soft);max-width:30em;margin:28px 0 36px;}
+  .hero-cta{display:flex;align-items:center;gap:22px;flex-wrap:wrap;}
+  .hero-cta .textlink{font-family:"Spectral",serif;font-weight:600;text-transform:uppercase;
+    letter-spacing:.14em;font-size:13px;border-bottom:1.5px solid var(--honey);padding-bottom:3px;}
+  .hero-meta{display:flex;gap:30px;margin-top:46px;border-top:1px solid var(--line);padding-top:24px;}
+  .hero-meta div{font-size:15px;color:var(--ink-soft);}
+  .hero-meta b{display:block;font-family:"Cormorant Garamond",serif;font-weight:700;
+    font-size:30px;color:var(--ink);line-height:1;margin-bottom:4px;}
+
+  .hero-art{position:relative;}
+  .hero-frame{position:relative;z-index:1;background:#fff;padding:14px 14px 58px;
+    box-shadow:0 26px 60px -28px rgba(42,32,20,.5);transform:rotate(1.6deg);
+    border:1px solid #e7dcc2;}
+  .hero-frame img{display:block;width:100%;height:520px;object-fit:cover;}
+  .hero-frame figcaption{font-family:"Yellowtail",cursive;font-size:25px;color:var(--ink-soft);
+    text-align:center;padding-top:14px;}
+  .hero-skep{position:absolute;right:-46px;bottom:-40px;width:190px;opacity:.9;
+    transform:rotate(-4deg);filter:drop-shadow(0 8px 16px rgba(42,32,20,.18));pointer-events:none;}
+  .hero-badge{position:absolute;left:-34px;top:-30px;width:118px;height:118px;border-radius:50%;z-index:3;
+    background:var(--ink);color:var(--paper);display:flex;flex-direction:column;align-items:center;
+    justify-content:center;text-align:center;transform:rotate(-9deg);box-shadow:0 14px 30px -12px rgba(42,32,20,.55);}
+  .hero-badge .script{font-size:30px;line-height:.8;color:var(--gold);}
+  .hero-badge small{font-family:"Spectral",serif;text-transform:uppercase;letter-spacing:.2em;
+    font-size:9px;margin-top:7px;}
+
+  /* ---------- section scaffold ---------- */
+  section{padding:104px 0;}
+  .sec-head{max-width:720px;}
+  .sec-head .over{display:block;margin-bottom:18px;}
+  .sec-head h2{font-size:clamp(38px,4.6vw,60px);letter-spacing:-.3px;}
+  .sec-head h2 .script{color:var(--honey-deep);font-weight:400;}
+  .lead{font-size:21px;color:var(--ink-soft);}
+
+  /* story */
+  .story{background:var(--paper-deep);border-block:1px solid var(--line);}
+  .story-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:72px;align-items:center;}
+  .story-photo{position:relative;background:#fff;padding:14px;border:1px solid #e7dcc2;
+    box-shadow:0 24px 54px -28px rgba(42,32,20,.45);transform:rotate(-1.4deg);}
+  .story-photo img{display:block;width:100%;height:480px;object-fit:cover;}
+  .story-photo .tag{position:absolute;right:-18px;bottom:26px;background:var(--honey);color:#fff;
+    font-family:"Spectral",serif;font-weight:600;text-transform:uppercase;letter-spacing:.18em;
+    font-size:11px;padding:10px 18px;transform:rotate(2deg);box-shadow:0 10px 22px -10px rgba(42,32,20,.5);}
+  .story-copy h2{font-size:clamp(36px,4.4vw,56px);margin-bottom:22px;}
+  .story-copy p{color:var(--ink-soft);max-width:34em;}
+  .sig{font-family:"Yellowtail",cursive;font-size:38px;color:var(--ink);margin-top:18px;}
+  .sig small{display:block;font-family:"Spectral",serif;font-size:12px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--honey-deep);margin-top:6px;}
+
+  /* honey / single product */
+  .product{display:grid;grid-template-columns:.9fr 1.1fr;gap:72px;align-items:center;}
+  .product-photo{position:relative;background:#fff;padding:14px;border:1px solid #e7dcc2;
+    box-shadow:0 26px 58px -28px rgba(42,32,20,.5);transform:rotate(-1.3deg);}
+  .product-photo img{display:block;width:100%;height:540px;object-fit:cover;}
+  .product-photo .seal{position:absolute;right:-26px;top:-26px;width:104px;height:104px;border-radius:50%;
+    background:var(--honey);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;transform:rotate(8deg);box-shadow:0 12px 26px -12px rgba(42,32,20,.5);}
+  .product-photo .seal b{font-family:"Cormorant Garamond",serif;font-size:30px;line-height:.85;}
+  .product-photo .seal small{font-family:"Spectral",serif;text-transform:uppercase;letter-spacing:.18em;
+    font-size:8.5px;margin-top:4px;}
+  .product-copy h3{font-size:clamp(40px,4.6vw,58px);margin-bottom:8px;}
+  .product-copy .note{font-size:20px;color:var(--ink-soft);font-style:italic;max-width:30em;margin-bottom:24px;}
+  .tasting{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px;}
+  .tasting span{font-family:"Spectral",serif;font-weight:600;text-transform:uppercase;letter-spacing:.14em;
+    font-size:11px;color:var(--honey-deep);border:1px solid var(--line);padding:7px 14px;border-radius:40px;
+    white-space:nowrap;flex:none;}
+  .product-copy p.body{color:var(--ink-soft);max-width:32em;font-size:17px;}
+  .buy-row{display:flex;align-items:center;gap:24px;margin-top:30px;padding-top:26px;
+    border-top:1px solid var(--line);}
+  .buy-row .price{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:42px;line-height:1;}
+  .buy-row .price small{font-family:"Spectral",serif;font-weight:500;font-size:14px;color:var(--ink-soft);
+    text-transform:uppercase;letter-spacing:.14em;margin-left:8px;}
+  .buy-row .add{font-family:"Spectral",serif;font-weight:600;text-transform:uppercase;letter-spacing:.14em;
+    font-size:13px;background:var(--ink);color:var(--paper);border:none;padding:16px 30px;cursor:pointer;
+    border-radius:2px;transition:.16s;}
+  .buy-row .add:hover{background:var(--honey);}
+  .buy-row .add.added{background:var(--honey-deep);}
+  .ship-note{font-size:14px;color:var(--ink-soft);margin-top:18px;}
+  .ship-note::before{content:"❋";color:var(--honey);margin-right:8px;}
+
+  /* promise band */
+  .promise{background:var(--footer);color:var(--paper);position:relative;overflow:hidden;border:none;}
+  .promise .over{color:var(--gold);}
+  .promise h2{color:var(--paper);font-size:clamp(36px,4.4vw,56px);}
+  .promise h2 .script{color:var(--gold);font-weight:400;}
+  .promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;margin-top:64px;}
+  .pcol{border-top:2px solid rgba(210,182,124,.4);padding-top:22px;}
+  .pcol .num{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:30px;color:var(--gold);
+    line-height:1;margin-bottom:16px;}
+  .pcol h3{font-size:28px;color:var(--paper);margin-bottom:10px;}
+  .pcol p{color:rgba(244,235,214,.72);font-size:16.5px;margin:0;}
+  .promise-skep{position:absolute;right:-70px;top:50%;transform:translateY(-50%) rotate(6deg);
+    width:340px;opacity:.07;filter:invert(1);pointer-events:none;}
+
+  /* visit */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;}
+  .visit-copy h2{font-size:clamp(36px,4.4vw,56px);margin-bottom:24px;}
+  .info-row{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);}
+  .info-row:first-of-type{border-top:1px solid var(--line);}
+  .info-row .k{font-family:"Spectral",serif;font-weight:600;text-transform:uppercase;letter-spacing:.16em;
+    font-size:12px;color:var(--honey-deep);width:130px;flex:none;padding-top:4px;}
+  .info-row .v{font-size:18px;color:var(--ink);}
+  .info-row .v span{color:var(--ink-soft);}
+  .stockists{margin-top:30px;}
+  .stockists .over{display:block;margin-bottom:14px;}
+  .stockists ul{list-style:none;margin:0;padding:0;columns:2;font-size:16px;color:var(--ink-soft);}
+  .stockists li{padding:5px 0;break-inside:avoid;}
+  .stockists li::before{content:"❋";color:var(--honey);margin-right:9px;font-size:12px;}
+  .visit-photo{position:relative;background:#fff;padding:14px;border:1px solid #e7dcc2;
+    box-shadow:0 24px 54px -28px rgba(42,32,20,.45);transform:rotate(1.2deg);}
+  .visit-photo img{display:block;width:100%;height:520px;object-fit:cover;}
+
+  /* newsletter */
+  .news{background:var(--gold);border-block:1px solid var(--honey-deep);text-align:center;}
+  .news .inner{max-width:660px;margin:0 auto;}
+  .news h2{font-size:clamp(38px,4.6vw,58px);color:var(--ink);}
+  .news h2 .script{color:var(--honey-deep);font-weight:400;}
+  .news p{color:#5a4423;font-size:18px;margin:14px 0 32px;}
+  .news form{display:flex;gap:12px;max-width:480px;margin:0 auto;}
+  .news input{flex:1;padding:15px 20px;border:1.5px solid var(--ink);background:rgba(255,255,255,.55);
+    font-family:"Spectral",serif;font-size:16px;color:var(--ink);border-radius:2px;}
+  .news input::placeholder{color:#7a6342;}
+  .news input:focus{outline:none;background:#fff;}
+
+  /* footer */
+  footer{background:var(--footer);color:rgba(244,235,214,.78);padding:78px 0 34px;}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:44px;}
+  .foot-brand img{width:64px;filter:invert(1);opacity:.92;margin-bottom:18px;}
+  .foot-brand .bn{font-family:"Cormorant Garamond",serif;font-weight:700;font-size:24px;color:var(--paper);}
+  .foot-brand p{font-size:15px;max-width:24em;margin-top:12px;}
+  .foot-col h4{font-family:"Spectral",serif;font-weight:600;text-transform:uppercase;letter-spacing:.2em;
+    font-size:12px;color:var(--gold);margin:0 0 18px;}
+  .foot-col a{display:block;font-size:15.5px;padding:5px 0;color:rgba(244,235,214,.78);transition:.15s;}
+  .foot-col a:hover{color:var(--paper);}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:56px;padding-top:26px;
+    border-top:1px solid rgba(210,182,124,.22);font-size:13px;color:rgba(244,235,214,.5);}
+  .foot-bottom .script{font-size:20px;color:var(--gold);}
+
+  @media(max-width:980px){
+    .hero-grid,.story-grid,.visit-grid{grid-template-columns:1fr;gap:48px;}
+    .hero-art{order:-1;}
+    .product{grid-template-columns:1fr;gap:44px;}
+    .promise-grid{grid-template-columns:1fr;gap:36px;}
+    nav.links{display:none;}
+    .foot-grid{grid-template-columns:1fr 1fr;gap:34px;}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 22px;}
+    .hero-grid{padding:56px 22px 64px;}
+    .news form{flex-direction:column;}
+    .stockists ul{columns:1;}
+    .foot-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">
+        <img src="assets/skep.png" alt="Beehive emblem">
+        <span class="bn">Rockingham County<small>Honey Co · Est. 2025</small></span>
+      </a>
+      <nav class="links">
+        <a href="#honey">Our Honey</a>
+        <a href="#story">Our Story</a>
+        <a href="#promise">Hive to Jar</a>
+        <a href="#visit">Where to Buy</a>
+      </nav>
+      <a class="btn btn--honey nav-cta" href="#visit">Where to Buy</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <a id="top"></a>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="over">Stratham, New Hampshire</span>
+        <h1>Raw honey,<span class="script">poured by hand.</span></h1>
+        <p class="lede">Unfiltered, single-origin honey from our very first hives — a brand-new family apiary on a quiet hillside in Stratham, New Hampshire.</p>
+        <div class="hero-cta">
+          <a class="btn btn--honey" href="#visit">Where to buy</a>
+          <a class="textlink" href="#story">Read our story</a>
+        </div>
+        <div class="hero-meta">
+          <div><b>1st</b>Season on<br>the hillside</div>
+          <div><b>15</b>Hives on<br>the hillside</div>
+          <div><b>100%</b>Raw &amp;<br>unfiltered</div>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-badge">
+          <span class="script">Raw</span>
+          <small>&amp; Unfiltered</small>
+        </div>
+        <figure class="hero-frame">
+          <img src="assets/hero-jar.webp" alt="Jar of our raw Wildflower honey, freshly poured">
+          <figcaption>Our Wildflower, poured this morning.</figcaption>
+        </figure>
+        <img class="hero-skep" src="assets/skep.png" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="story" id="story">
+    <div class="wrap story-grid">
+      <div class="story-photo">
+        <img src="assets/meadow-walk-web.jpg" alt="Walking the mowed path out to the hives through the wildflower meadow">
+        <span class="tag">Est. 2025</span>
+      </div>
+      <div class="story-copy">
+        <span class="over">Our Story</span>
+        <h2>Our very first season.</h2>
+        <p>We're brand new at this. It started last spring with a few hives behind the house, a tall stack of how-to books, and a hunch that honey from our own corner of Stratham would taste like nowhere else.</p>
+        <p>We still pull every frame by hand, let the honey settle in its own time, and jar it raw — never heated, never filtered. We're learning as we go, and we'd love for you to taste the very first harvest.</p>
+        <div class="sig">The Lathrop Family<small>New Beekeepers</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HONEY / SINGLE PRODUCT -->
+  <section id="honey">
+    <div class="wrap">
+      <div class="sec-head" style="margin:0 auto 56px;text-align:center;">
+        <span class="over" style="display:block;margin-bottom:16px;">Our Honey</span>
+        <h2>One honey, <span class="script">done right.</span></h2>
+      </div>
+      <div class="product">
+        <div class="product-photo">
+          <img src="assets/product-jar.webp" alt="A 16 oz jar of our Wildflower Honey">
+          <div class="seal"><b>16</b><small>oz jar</small></div>
+        </div>
+        <div class="product-copy">
+          <span class="over">Single Varietal · Raw &amp; Unfiltered</span>
+          <h3 style="margin-top:14px;">Wildflower Honey</h3>
+          <p class="note">Bright and floral, with a soft meadow finish — gathered from whatever's blooming across the hillside that week.</p>
+          <div class="tasting">
+            <span>Floral</span>
+            <span>Light Amber</span>
+            <span>Meadow Finish</span>
+          </div>
+          <p class="body">Because it's wild, no two batches taste quite the same — each jar is a snapshot of the season our bees worked. Never heated, never filtered, just poured straight from the hive.</p>
+          <div class="buy-row">
+            <span class="price">$15<small>/ jar</small></span>
+            <a class="btn btn--honey" href="#visit" style="padding:16px 30px;">Where to buy</a>
+          </div>
+          <p class="ship-note">Sold in person at two Stratham locations · call us for local delivery</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISE -->
+  <section class="promise" id="promise">
+    <img class="promise-skep" src="assets/skep.png" alt="">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="over">Hive to Jar</span>
+        <h2>Nothing added. <span class="script">Nothing taken away.</span></h2>
+      </div>
+      <div class="promise-grid">
+        <div class="pcol">
+          <div class="num">01</div>
+          <h3>Raw &amp; Unfiltered</h3>
+          <p>Never heated or fine-strained, so the pollen, enzymes and flavor stay exactly where the bees left them.</p>
+        </div>
+        <div class="pcol">
+          <div class="num">02</div>
+          <h3>Single-Origin</h3>
+          <p>Every jar is traceable to our own hives in Stratham — no blending, no imports, no shortcuts.</p>
+        </div>
+        <div class="pcol">
+          <div class="num">03</div>
+          <h3>Small-Batch</h3>
+          <p>Harvested by hand a few frames at a time and jarred on the farm, the way it's always been done.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHERE TO BUY -->
+  <section id="visit">
+    <div class="wrap visit-grid">
+      <div class="visit-copy">
+        <span class="over">Where to Buy</span>
+        <h2>Find our honey nearby.</h2>
+        <p class="lead" style="margin-bottom:30px;">We don't have a stand of our own just yet — for now, you'll find our Wildflower jars at two spots right here in Stratham.</p>
+        <div class="info-row"><div class="k">Saltonstall</div><div class="v"><a href="https://www.saltonstallfarm.com/" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--honey);">Saltonstall Farm Stand</a><br><span>61 Stratham Heights Rd, Stratham NH</span></div></div>
+        <div class="info-row"><div class="k">In town</div><div class="v"><a href="https://www.firstlightchiro.com/" target="_blank" rel="noopener" style="border-bottom:1.5px solid var(--honey);">First Light Chiropractic</a><br><span>56 Portsmouth Ave, Stratham NH 03885</span></div></div>
+        <div class="info-row"><div class="k">Call us</div><div class="v">(603) 998-7282</div></div>
+        <p class="ship-note" style="margin-top:24px;">Prefer it delivered? Free local drop-off in Stratham — just give us a call.</p>
+      </div>
+      <div class="visit-photo">
+        <img src="assets/thistle-moth-web.jpg" alt="Hummingbird moth on a thistle bloom in the meadow">
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="news">
+    <div class="wrap inner">
+      <span class="over">Join the Hive</span>
+      <h2 style="margin-top:14px;">A note when the <span class="script">new harvest</span> is in.</h2>
+      <p>Seasonal harvests, simple honey recipes, and the occasional jar giveaway. No more than once a month.</p>
+      <form onsubmit="event.preventDefault();this.querySelector('input').value='';this.querySelector('button').textContent='Welcome in ✦';">
+        <input type="email" placeholder="you@email.com" required>
+        <button class="btn" type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-brand">
+          <img src="assets/skep.png" alt="Beehive emblem">
+          <div class="bn">Rockingham County Honey Co</div>
+          <p>Raw, unfiltered honey from our family's first hives in Stratham, New Hampshire. Brand new, and proud of it.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Our Honey</h4>
+          <a href="#honey">Wildflower Honey</a>
+          <a href="#honey">16 oz Jar — $15</a>
+          <a href="#visit">Local Delivery</a>
+          <a href="#visit">Where to Buy</a>
+        </div>
+        <div class="foot-col">
+          <h4>Where to Buy</h4>
+          <a href="#visit">Saltonstall Farm Stand</a>
+          <a href="#visit">First Light Chiropractic</a>
+          <a href="#story">Our Story</a>
+          <a href="#promise">Hive to Jar</a>
+        </div>
+        <div class="foot-col">
+          <h4>Find us</h4>
+          <a href="tel:6039987282">(603) 998-7282</a>
+          <a href="mailto:hello@rockinghamhoney.com">hello@rockinghamhoney.com</a>
+          <a href="#">Instagram</a>
+          <a href="#">Facebook</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Rockingham County Honey Co · Stratham, NH</span>
+        <span class="script">Bee well.</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
