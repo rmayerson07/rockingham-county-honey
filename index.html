@@ -227,6 +227,8 @@
     font-size:12px;color:var(--gold);margin:0 0 18px;}
   .foot-col a{display:block;font-size:15.5px;padding:5px 0;color:rgba(244,235,214,.78);transition:.15s;}
   .foot-col a:hover{color:var(--paper);}
+  /* long enough to overflow the column at 15.5px */
+  .foot-col a.foot-email{font-size:14px;overflow-wrap:anywhere;}
   .foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:56px;padding-top:26px;
     border-top:1px solid rgba(210,182,124,.22);font-size:13px;color:rgba(244,235,214,.5);}
   .foot-bottom .script{font-size:20px;color:var(--gold);}
@@ -260,6 +262,8 @@
     .hero-skep{width:130px;right:-14px;bottom:-26px;}
     .product-photo .seal{right:-12px;top:-18px;width:86px;height:86px;}
     .story-photo .tag{right:-8px;}
+    /* space-between collides these two at phone width */
+    .foot-bottom{flex-direction:column;align-items:flex-start;gap:14px;}
   }
 </style>
 </head>
@@ -461,6 +465,7 @@
         <div class="foot-col">
           <h4>Find us</h4>
           <a href="tel:6039987282">(603) 998-7282</a>
+          <a class="foot-email" href="mailto:rockinghamcountyhoneyco@gmail.com">rockinghamcountyhoneyco@gmail.com</a>
         </div>
       </div>
       <div class="foot-bottom">
