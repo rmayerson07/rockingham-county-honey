@@ -161,10 +161,11 @@
   .ship-note::before{content:"❋";color:var(--honey);margin-right:8px;}
 
   /* beeswax — secondary offering under the honey */
-  .extra{display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center;
+  .extra{display:grid;grid-template-columns:308px 1fr auto;gap:46px;align-items:center;
     margin-top:88px;padding-top:48px;border-top:1px solid var(--line);}
-  .extra-mark{width:104px;opacity:.88;transform:rotate(-3deg);
-    filter:drop-shadow(0 8px 16px rgba(42,32,20,.16));}
+  .extra-photo{background:#fff;padding:11px;border:1px solid #e7dcc2;
+    box-shadow:0 18px 42px -22px rgba(42,32,20,.45);transform:rotate(-1.8deg);}
+  .extra-photo img{display:block;width:100%;height:186px;object-fit:cover;object-position:50% 40%;}
   .extra-copy h3{font-size:clamp(30px,3.4vw,42px);margin:10px 0 10px;}
   .extra-copy p{color:var(--ink-soft);font-size:17px;max-width:40em;margin:0;}
   .extra-buy{display:flex;flex-direction:column;align-items:flex-end;gap:14px;flex:none;}
@@ -237,8 +238,9 @@
     .hero-grid,.story-grid,.visit-grid{grid-template-columns:1fr;gap:48px;}
     .hero-art{order:-1;}
     .product{grid-template-columns:1fr;gap:44px;}
-    .extra{grid-template-columns:1fr;gap:24px;justify-items:start;margin-top:64px;padding-top:40px;}
-    .extra-buy{align-items:flex-start;flex-direction:row;gap:22px;}
+    .extra{grid-template-columns:1fr;gap:30px;margin-top:64px;padding-top:40px;}
+    .extra-photo img{height:260px;}
+    .extra-buy{align-items:center;flex-direction:row;justify-content:flex-start;gap:22px;}
     .promise-grid{grid-template-columns:1fr;gap:36px;}
     nav.links{display:none;}
     .foot-grid{grid-template-columns:1fr 1fr;gap:34px;}
@@ -366,11 +368,13 @@
       </div>
 
       <div class="extra">
-        <img class="extra-mark" src="assets/skep.png" alt="">
+        <div class="extra-photo">
+          <img src="assets/beeswax.webp" alt="Blocks of our rendered beeswax, each stamped BEESWAX">
+        </div>
         <div class="extra-copy">
           <span class="over">Also from the hive</span>
           <h3>Beeswax</h3>
-          <p>Clean golden wax, rendered from the cappings our bees build over every cell of honey. Lovely for candles, salves and balms — or for waxing a stubborn drawer.</p>
+          <p>Clean golden wax, rendered from the cappings our bees build over every cell of honey, then poured into bars. Lovely for candles, salves and balms — or for waxing a stubborn drawer.</p>
         </div>
         <div class="extra-buy">
           <span class="price">$2<small>/ oz</small></span>
